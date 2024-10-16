@@ -1,6 +1,7 @@
 export-env {
   $env.config = (
-    $env.config
+    $env.config?
+    | default {}
     | upsert completions.external {
       enable: true
       completer: {|spans|

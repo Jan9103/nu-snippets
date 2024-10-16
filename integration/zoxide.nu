@@ -1,6 +1,7 @@
 export-env {
   $env.config = (
-    $env.config
+    $env.config?
+		| default {}
     | upsert hooks.pre_prompt {|config|
       $config
       | get -i hooks.pre_prompt
